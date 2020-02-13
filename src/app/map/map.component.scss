@@ -1,0 +1,34 @@
+.map-wrapper {
+    display: block;
+    width: 100%;
+    text-align: center;
+    #slush-map-img {    
+        max-width: 100%;
+    }
+    .slush-map {
+        #area-001 {
+                width: 10px;
+                height: 10px;
+                border: medium red;
+        }
+    }
+    .map{
+        position: relative;
+        display: inline-block;
+        img{
+            display: block;
+            max-width: 100%;
+        }
+        svg{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    }
+}
+.svg {
+    position:absolute;
+}
+img {
+    position: relative;
+}

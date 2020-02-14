@@ -16,6 +16,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { EntertainmentComponent } from './entertainment/entertainment.component';
 import { InfoCardComponent } from './info-card/info-card.component';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AlertModule } from 'ngx-bootstrap';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,10 @@ import { InfoCardComponent } from './info-card/info-card.component';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AlertModule.forRoot()
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore,AngularFireAuth,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

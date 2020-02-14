@@ -1,7 +1,8 @@
 export class UserInfo {
-    id:Number;
-    name:string;
-    workingPosition: string;
-    facebook: string;
-    email: string;
+    uid:any;
+    displayName:any;
+    // workingPlace?:any
+    // workingPositio?: any;
+    email: any;
+    photoURL:any;
 }

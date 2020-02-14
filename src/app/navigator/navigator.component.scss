@@ -30,6 +30,7 @@ h1 {
       color: rgb(91, 92, 97);
       font-size: 3vw;
       font-weight: bolder;
+      margin: 5%;
     }
   }
   a.active {
@@ -43,7 +44,7 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 400px) {
   .navContainer {
     a {
       p {

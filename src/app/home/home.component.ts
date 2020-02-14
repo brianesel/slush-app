@@ -4,6 +4,7 @@ import {MapInfo} from 'src/app/models/map-info.model'
 import {UserInfo} from 'src/app/models/user-info.model'
 import {Router} from '@angular/router'
 import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { UserService } from '../services/user.service';
 export class HomeComponent implements OnInit {
   locationCode:Number;
   user: UserInfo;
-  constructor(private mapService: MapInfoService,private userService: UserService, private router: Router) { }
+  constructor(private mapService: MapInfoService,private userService: UserService, private router: Router, public auth: AuthService) { }
 
   locationCodeChange(value:Number){
     this.locationCode = value;

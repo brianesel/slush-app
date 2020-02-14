@@ -9,6 +9,13 @@ import { MapComponent } from './map/map.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminMapComponent } from './admin-map/admin-map.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { EntertainmentComponent } from './entertainment/entertainment.component';
+import { InfoCardComponent } from './info-card/info-card.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +25,18 @@ import { AdminMapComponent } from './admin-map/admin-map.component';
     MapComponent,
     SigninComponent,
     SignupComponent,
-    AdminMapComponent
+    AdminMapComponent,
+    EntertainmentComponent,
+    InfoCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

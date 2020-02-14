@@ -16,10 +16,24 @@
         <area id="area-011" target="" alt="011-food-market" title="011-food-market" href="" coords="270,135,430,206" shape="rect">
     </map> -->
     <div class="map">
-        <img id="slush-map-img" src="assets/image/slushmap.svg">
-        <svg id="slush-map-img" src="assets/image/slushmap.svg" width=100% height=100%>
-            <circle cx="35%" cy="10%" r="1%" fill="green" stroke="black" />
+        <img id="slush-map-img" src="assets/image/slushmap.svg" usemap="#image-map">
+        <img id="slush-map-img-dup" src="assets/image/slushmap.svg" >
+        <svg class="slush-map-svg" src="assets/image/slushmap.svg" width=100% height=100%>
+            <circle [attr.cx]="currentLocationX+'%'" [attr.cy]="currentLocationY+'%'" r="1%" fill="green" stroke="black" />
             <circle cx="35%" cy="10%" r="2%" fill="red" stroke="black" />
         </svg>
+        <map class="slush-map" name="image-map">
+            <area id="area-001" target="" alt="001-entrance-south" title="001-entrance-south" href="" coords="79,280,0" shape="circle">
+            <area id="area-002" target="" alt="002-entrance-north" title="002-entrance-north" href="" coords="477,271,7" shape="circle">
+            <area id="area-003" target="" alt="003-entrance-food-market-1" title="003-entrance-food-market-1" href="" coords="403,227,9" shape="circle">
+            <area id="area-004" target="" alt="004-entrance-food-market-2" title="004-entrance-food-market-2" href="" coords="287,227,9" shape="circle">
+            <area id="area-005" target="" alt="005-cross-cloakroom-entrance-north" title="005-cross-cloakroom-entrance-north" href="" coords="136,367,8" shape="circle">
+            <area id="area-006" target="" alt="006-walk-way-1" title="006-walk-way-1" href="" coords="239,370,7" shape="circle">
+            <area id="area-007" target="" alt="007-walk-way-2" title="007-walk-way-2" href="" coords="355,369,7" shape="circle">
+            <area id="area-008" target="" alt="008-area-walk-way-1" title="008-area-walk-way-1" href="" coords="169,497,393,511" shape="rect">
+            <area id="area-009" target="" alt="009-area-walk-way-2" title="009-area-walk-way-2" href="" coords="428,246,179,228" shape="rect">
+            <area id="area-010" target="" alt="010-area-stage-1" title="010-area-stage-1" href="" coords="226,194,130,174" shape="rect">
+            <area id="area-011" target="" alt="011-food-market" title="011-food-market" href="" coords="270,135,430,206" shape="rect">
+        </map>
     </div>
 </div>

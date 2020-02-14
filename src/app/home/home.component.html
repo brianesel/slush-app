@@ -1,9 +1,9 @@
-<h1 class="title-pen"> User Profile <span>UI</span></h1>
+<h1 class="title-pen"> User Profile </h1>
 <div class="user-profile">
-	<img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="my avatar" />
+  <img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="my avatar" />
     <div class="username">Will Smith</div>
   <div class="bio">
-  	Senior UI Designer
+    Senior UI Designer
   </div>
     <div class="description">
       I use to design websites and applications
@@ -19,11 +19,10 @@
     <li>
       <span class="entypo-user"> 311</span>
     </li>
- </ul>
+  </ul>
 </div>
-  <footer>
-    <h1>inspired by 
-  <a href="https://dribbble.com/shots/1033074-User-Profile">
-  <span class="entypo-dribbble"></span> shot</a>
-    </h1>
-  </footer>
+<div class="map-locate">
+  <h1>Where am I?</h1>
+  <input type="number" #locationCode placeholder="Location code" (change)="locationCodeChange(locationCode.value)">
+  <button (click)="locateMe()">LOCATE</button>
+</div>

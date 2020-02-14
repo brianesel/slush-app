@@ -5,25 +5,49 @@
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
-
-body {
-  background: #fffcdd;
-  padding: 2.23em;
-}
-
-.title-pen {
-  color: #333;
-  font-family: "Coda", sans-serif;
+.map-locate {
+  border-radius: .3em;
   text-align: center;
+  align-items: center;
+  h1 {
+    color: rgb(91, 92, 97);
+    size: 2rem;
+  }
+  input {
+    width: 80%;
+    max-width: 350px;
+    letter-spacing: normal;
+    height: 40px;
+    border-radius: 0.3rem;
+    border: 2px solid black;
+    background-color: transparent;
+    padding: 4px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 5px;
+    color: rgb(91, 92, 97);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  button {
+    background-color: transparent;
+    color: rgb(91, 92, 97);
+    font-weight: 900;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
 }
-.title-pen span {
-  color: #55acee;
+.title-pen {
+  color: rgb(91, 92, 97);
+  text-align: center;
 }
 
 .user-profile {
   margin: auto;
-	width: 25em; 
-  height: 11em;
+	width: 50%; 
   background: #fff;
   border-radius: .3em;
 }
@@ -34,7 +58,6 @@ body {
   margin-left: 5.80em;
   color: #658585;
   font-size: 1.53em;
-  font-family: "Coda", sans-serif;
   font-weight: bold;
 }
 .user-profile  .bio {
@@ -66,7 +89,7 @@ body {
 .user-profile ul.data {
 	margin: 2em auto;
 	height: 3.70em;
-  background: #4eb6b6;
+  background: #99268E;
   text-align: center;
   border-radius: 0 0 .3em .3em;
 }

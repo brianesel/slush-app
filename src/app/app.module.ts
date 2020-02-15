@@ -13,12 +13,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { EntertainmentComponent } from './entertainment/entertainment.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AlertModule } from 'ngx-bootstrap';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuardService} from './services/auth-guard.service';
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,13 @@ import { AuthGuard } from './services/auth-guard.service';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireDatabaseModule,
     AlertModule.forRoot()
   ],
-  providers: [AngularFirestore,AngularFireAuth,AuthGuard],
+  providers: [AngularFirestore,AngularFireAuth,AuthGuardService,
+    {provide : LocationStrategy , useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

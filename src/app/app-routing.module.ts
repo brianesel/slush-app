@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { EntertainmentComponent } from './entertainment/entertainment.component';
 import { SigninComponent } from './signin/signin.component';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuardService} from './services/auth-guard.service';
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuardService],
     children: [
       {path: 'home', component: HomeComponent}
     ]
@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'map/:mapCodeX/:mapCodeY',
     component: MapComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuardService],
     children: [
       
     ]
@@ -34,7 +34,7 @@ const routes: Routes = [
   {
     path: 'presswhenyouarestress',
     component: EntertainmentComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuardService],
     children: [
       
     ]

@@ -20,9 +20,11 @@ export class HomeComponent implements OnInit {
     this.locationCode = value;
   }
   async locateMe(){
-    await this.mapService.getMapInfo(this.locationCode.toString());
+    await this.mapService.getMapInfo(this.locationCode.toString(),1);
   }
-  
+  async locateTarget(){
+    await this.mapService.getMapInfo(this.locationCode.toString(),2);
+  }
 
   ngOnInit(): void {
   }

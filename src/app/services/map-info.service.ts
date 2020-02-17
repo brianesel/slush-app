@@ -12,12 +12,12 @@ export class MapInfoService {
     
   }
 
-  async getMapInfo(areaCode: string){
+  async getMapInfo(areaCode: string, who : number){
     this.firestore.collection('mapInfo').doc(areaCode).valueChanges().subscribe(data=>{
-      this.updateMapInfo(data);
+      this.updateMapInfo(data,who);
     })
   }
-  updateMapInfo(data){
+  updateMapInfo(data,who : number){
     let map: MapInfo = {
       name: data.name,
       coor: {
@@ -25,7 +25,7 @@ export class MapInfoService {
         _long: data.coor._long,
       }
     }
-    this.router.navigate(['/map',map.coor._lat,map.coor._long,1]);
+    this.router.navigate(['/map',map.coor._lat,map.coor._long,who]);
   }
 
   createMap(mapInfo: MapInfo){

@@ -35,9 +35,10 @@
         </div>
     </div>
     <div class="map-locate">
-      <h1>Where am I?</h1>
+      <h1>Where?</h1>
       <input type="number" #locationCode placeholder="Location code" (change)="locationCodeChange(locationCode.value)">
-      <button (click)="locateMe()">LOCATE</button>
+      <button (click)="locateMe()">am i?</button>
+      <button (click)="locateTarget()">is that?</button>
     </div>
     <div class="signout">
       <h2>I want to be another person<br>...</h2>

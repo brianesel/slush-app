@@ -4,4 +4,5 @@ export class SlushThing {
     locationX: any;
     locationy: any;
     img:any;
+    color:any;
 }

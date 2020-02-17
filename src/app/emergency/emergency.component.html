@@ -1,0 +1,43 @@
+<div class="emergency-wrapper">
+    <div class="emergency-container">
+        <h2 class="py-4">Persons to contact</h2>
+  
+        <div class="form-group mb-4">
+        <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
+        </div>
+    
+        <table class="table" *ngIf="(persons | personFilter: searchText).length > 0; else noResults">
+        <colgroup>
+            <col width="2%">
+            <col width="15%">
+            <col width="33%">
+            <col width="15%">
+            <col width="15%">
+        </colgroup>
+        <thead>
+            <tr>
+            <th scope="col-3">#</th>
+            <th scope="col-3">picture</th>
+            <th scope="col-3">name</th>
+            <th scope="col-3">position</th>
+            <th scope="col-3">contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of persons | personFilter: searchText; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <th>
+                <img src={{person.ava}} />  
+            </th>
+            <td>{{person.name}}</td>
+            <td>{{person.position}}</td>
+            <td>{{person.contact}}</td>
+            </tr>
+        </tbody>
+        </table>
+    
+        <ng-template #noResults>
+        <p>No results found for "{{searchText}}".</p>
+        </ng-template>
+    </div>
+</div>

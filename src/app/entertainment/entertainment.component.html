@@ -1,7 +1,20 @@
 <div class="entertainment-wrapper">
     <div class="entertainment-list row">
         <ng-template ngFor let-item [ngForOf]="list" let-i="index">
-            <div class="col-6 col-sm-5 col-md-3">{{item.title}}</div>
+            <div *ngIf="item.title == 'Emergency'" [style.background]="item.color" class="item col-6 col-sm-5 col-md-3" (click)="sendMeEmergency()">
+                <div class="image">
+                    <h3>Emergency</h3>
+                    <img onerror="this.style.display='none'" [src]="item.img" alt=blank />
+                </div>
+            <!-- <div class="description">{{item.description}}</div> -->
+            </div>
+            <div *ngIf="item.title != 'Emergency'" [style.background]="item.color" class="item col-6 col-sm-5 col-md-3" (click)="sendMeThere(item.locationX,item.locationy)">
+                <div class="image">
+                    <h3>{{item.title}}</h3>
+                    <img onerror="this.style.display='none'" [src]="item.img" alt=blank />
+                </div>
+            <!-- <div class="description">{{item.description}}</div> -->
+            </div>
         </ng-template>
     </div>
 </div>

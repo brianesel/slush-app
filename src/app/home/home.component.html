@@ -1,43 +1,47 @@
-<h1 class="title-pen"> User Profile </h1>
-<div class="user-profile"  *ngIf="auth.user$ | async as user">
-  <div class="user-detail-info row">
-    <div class="user-avatar col-12 col-sm-4 col-md-3">
-      <img class="avatar" src={{user.photoURL}} alt="my avatar" />
+<div class="home-wrapper wrapper">
+  <div class="home-container container">
+    <h1 class="title-pen"> User Profile </h1>
+    <div class="user-profile"  *ngIf="auth.user$ | async as user">
+      <div class="user-detail-info row">
+        <div class="user-avatar col-12 col-sm-4 col-md-3">
+          <img class="avatar" src={{user.photoURL}} alt="my avatar" />
+        </div>
+        <div class="user-description col-12 col-sm-8 col-md-9">
+          <div class="username">{{user.displayName}}</div>
+          <div class="bio">
+            Food and education passioner
+          </div>
+            <div class="description">
+              I enjoy the Slush. Both at the event and in the restroom.
+          </div>
+        </div>
+      </div>
+      <div class="data-row row">
+          <div class="data-item col-4">
+            <span class="toltip">How many people you have met</span>
+            <i class="fas fa-fist-raised"></i>
+            <span class="entypo-heart info"> 127</span>
+          </div>
+          <div class="data-item col-4">
+            <span class="toltip">How many start-up you have talked to</span>
+            <i class="far fa-handshake"></i>
+            <span class="entypo-eye info"> 853</span>
+          </div>
+          <div class="data-item col-4">
+            <span class="toltip">How many drink you have had</span>
+            <i class="fas fa-mug-hot"></i>
+            <span class="entypo-user info"> 311</span>
+          </div>
+        </div>
     </div>
-    <div class="user-description col-12 col-sm-8 col-md-9">
-      <div class="username">{{user.displayName}}</div>
-      <div class="bio">
-        Food and education passioner
-      </div>
-        <div class="description">
-          I enjoy the Slush. Both at the event and in the restroom.
-      </div>
+    <div class="map-locate">
+      <h1>Where am I?</h1>
+      <input type="number" #locationCode placeholder="Location code" (change)="locationCodeChange(locationCode.value)">
+      <button (click)="locateMe()">LOCATE</button>
+    </div>
+    <div class="signout">
+      <h2>I want to be another person<br>...</h2>
+      <button (click)="auth.signOut()">LOGOUT</button>
     </div>
   </div>
-  <div class="data-row row">
-      <div class="data-item col-4">
-        <span class="toltip">How many people you have met</span>
-        <i class="fas fa-fist-raised"></i>
-        <span class="entypo-heart info"> 127</span>
-      </div>
-      <div class="data-item col-4">
-        <span class="toltip">How many start-up you have talked to</span>
-        <i class="far fa-handshake"></i>
-        <span class="entypo-eye info"> 853</span>
-      </div>
-      <div class="data-item col-4">
-        <span class="toltip">How many drink you have had</span>
-        <i class="fas fa-mug-hot"></i>
-        <span class="entypo-user info"> 311</span>
-      </div>
-    </div>
-</div>
-<div class="map-locate">
-  <h1>Where am I?</h1>
-  <input type="number" #locationCode placeholder="Location code" (change)="locationCodeChange(locationCode.value)">
-  <button (click)="locateMe()">LOCATE</button>
-</div>
-<div class="signout">
-  <h2>I want to be another person<br>...</h2>
-  <button (click)="auth.signOut()">LOGOUT</button>
 </div>

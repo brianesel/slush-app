@@ -19,9 +19,8 @@ export class HomeComponent implements OnInit {
   locationCodeChange(value:Number){
     this.locationCode = value;
   }
-  locateMe(){
-    let data=this.mapService.getMapInfo(this.locationCode.toString());
-    this.router.navigate(['/map',15,30]);
+  async locateMe(){
+    await this.mapService.getMapInfo(this.locationCode.toString());
   }
   
 

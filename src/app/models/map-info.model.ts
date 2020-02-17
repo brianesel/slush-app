@@ -1,6 +1,8 @@
 export class MapInfo {
     name:String;
-    locX:Number;
-    locY:Number;
+    coor: {
+        _lat: any,
+        _long:any
+    }
 
 }

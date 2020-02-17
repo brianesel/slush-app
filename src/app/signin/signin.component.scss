@@ -2,4 +2,15 @@
     color: rgb(109, 110, 116);
     text-align: center;
     padding: 10px;
+    .checkbox {
+        p {
+            vertical-align: middle;
+            display: inline;
+        }
+        input {
+            vertical-align: middle;
+            margin-left: 10px;
+            display: inline;
+        }
+    }
 }

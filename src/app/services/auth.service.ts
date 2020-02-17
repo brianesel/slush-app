@@ -32,14 +32,32 @@ export class AuthService {
       )
      }
     
-     async googleSignin() {
+    async googleSigninOffline() {
+      this.afAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL).then(async ()=>{
+      this.googleSignin();
+      }).catch((error) => {
+        // Handle errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        console.error(errorCode, errorMessage);
+        this.afAuth.auth.setPersistence(auth.Auth.Persistence.NONE);
+      })
+        // await console.log("you can use your app offline after succesfully login");
+    }
+    
+    async googleSigninOnline() {
+      this.googleSignin();
+    }
+
+    async googleSignin() {
       const provider = new auth.GoogleAuthProvider();
       const credential = await this.afAuth.auth.signInWithPopup(provider);
+      // console.log(credential);
       // return
       this.updateUserData(credential.user);
       this.router.navigate(['/home']);
     }
-  
+    
     private updateUserData(user) {
       // Sets user data to firestore on login
       const userRef: AngularFirestoreDocument<UserInfo> = this.afs.doc(`users/${user.uid}`);
@@ -49,6 +67,7 @@ export class AuthService {
         email: user.email, 
         displayName: user.displayName, 
         photoURL: user.photoURL,
+        phoneNumber: user.phoneNumber,
         // workingPlace: user.workingPlace,
         // workingPosition: user.workingPosition,
       }
@@ -58,6 +77,6 @@ export class AuthService {
   
     async signOut() {
       await this.afAuth.auth.signOut();
-      this.router.navigate(['/']);
+      this.router.navigate(['/signin']);
     }
   }

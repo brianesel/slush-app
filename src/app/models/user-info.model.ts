@@ -4,5 +4,6 @@ export class UserInfo {
     // workingPlace?:any
     // workingPositio?: any;
     email: any;
-    photoURL:any;
+    photoURL: any;
+    phoneNumber: any;
 }

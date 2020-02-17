@@ -1,4 +1,7 @@
-<div>
-    <h1 class="title">Have you try this?</h1>
-    
+<div class="entertainment-wrapper">
+    <div class="entertainment-list row">
+        <ng-template ngFor let-item [ngForOf]="list" let-i="index">
+            <div class="col-6 col-sm-5 col-md-3">{{item.title}}</div>
+        </ng-template>
+    </div>
 </div>
